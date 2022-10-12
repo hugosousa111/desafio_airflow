@@ -182,4 +182,6 @@ webserver_config.py
 standalone_admin_password.txt
 airflow.db
 airflow.cfg
+airflow-webserver.pid
+airflow.db-journal
 /logs
