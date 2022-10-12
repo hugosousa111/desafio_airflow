@@ -5,23 +5,44 @@
 
 ## Como rodar? 
 
-Para rodar pela primeira vez
-Faça o clone
+- Obs: os comandos a seguir são destinados para ambientes Linux. 
 
-python3 -m venv venv
-source venv/bin/activate
-source .env
-pip install -r requirements.txt
-airflow standalone
+- Para rodar pela primeira vez, faça o clone do projeto: 
+    ```console
+    git clone https://github.com/hugosousa111/desafio_airflow.git
+    ```
+- Na pasta raiz do projeto, crie e ative um ambiente virtual: 
+    ```console
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+- Crie um arquivo .env na pasta raiz do projeto, seguindo o arquivo [`.env.example`](.env.example).
+- Execute o comando: 
+    ```console
+    source .env
+    ```
+- Instale os pacotes necessários com: 
+    ```console
+    pip install -r requirements.txt
+    ```
+- E finalmente, chame o airflow (Quando quiser rodar o mesmo projeto novamente, basta fazer este passo): 
+    ```console
+    airflow standalone
+    ```
+- No navegador, acesse [localhost:8080](http://localhost:8080/)
+- Para não aparecer as Dags de exemplos na home do Airflow, você pode acessar o arquivo `airflow.cfg` e colocar False na variável load_examples:
+    ```python
+    load_examples = False
+    ```
+- Adicione a variável my_email no ambiente do Airflow. 
+    - Acesse Admin/Variables
+    - Clique no botão + para adicionar variável
+    - No campo Key coloque 'my_email'
+    - No campo Val adicione o email
 
-Você pode ver os arquivos
-airflow.cfg
-load_examples = False
+![img](images/var_email.png)
 
-adicione a variavel my_email
-admin/variables/ botão + para adicionar variaveis
-
-Espere a dag aparecer ou derrube e suba novamente o airflow
-
-Ative a dag DesafioAirflow
-Você pode acessar os logs e os arquivso
+- Espere a Dag aparecer (Você pode derrubar e subir novamente o airflow se estiver com pressa)
+- Acesse a Dag 'DesafioAirflow'
+- Ative a Dag, espere a execução da Dag
+- O arquivo `logs/simple_log.log` foi criado para facilitar o desenvolvimento da Dag, identificando se os 2 métodos desenvolvidos estavam executando corretamente. Para logs mais completos acesse os logs das task na pasta `logs/` ou na interface do Airflow.
