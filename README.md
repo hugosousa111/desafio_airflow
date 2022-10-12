@@ -29,7 +29,7 @@
     ```console
     airflow standalone
     ```
-- No navegador, acesse [localhost:8080](http://localhost:8080/)
+- No navegador, acesse [localhost:8080](http://localhost:8080/), as credenciais, login e senha, são apresentadas para o usuário no terminal
 - Para não aparecer as Dags de exemplos na home do Airflow, você pode acessar o arquivo `airflow.cfg` e colocar False na variável load_examples:
     ```python
     load_examples = False
@@ -44,5 +44,6 @@
 
 - Espere a Dag aparecer (Você pode derrubar e subir novamente o airflow se estiver com pressa)
 - Acesse a Dag 'DesafioAirflow'
-- Ative a Dag, espere a execução da Dag
+- Ative a Dag, espere a execução da Dag, 
+- Caso necessário, você pode usar o Trigger Dag, para ativar manualmente
 - O arquivo `logs/simple_log.log` foi criado para facilitar o desenvolvimento da Dag, identificando se os 2 métodos desenvolvidos estavam executando corretamente. Para logs mais completos acesse os logs das task na pasta `logs/` ou na interface do Airflow.
